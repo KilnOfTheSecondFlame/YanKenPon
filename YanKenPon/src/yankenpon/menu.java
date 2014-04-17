@@ -35,7 +35,10 @@ public class menu {
             System.out.println("Choose your opponent: Randy, Ray, Robbie");
             Opponent=Puffer.nextLine();
             if ("Randy".equals(Opponent)||"Ray".equals(Opponent)||"Robbie".equals(Opponent)) this.opponent = Opponent;
-            else Opponent = "Init";
+            else {
+                Opponent = "Init";
+                System.out.println("Not an available opponent!");
+            }
         }
     }
     
