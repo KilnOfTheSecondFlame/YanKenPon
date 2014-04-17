@@ -30,8 +30,13 @@ public class menu {
     }
 
     public void setOpponent() {
-        System.out.println("Choose your opponent: Randy, Ray, Robbie");
-        this.opponent=Puffer.nextLine();
+        String Opponent = "Init";
+        while (Opponent == "Init") {
+            System.out.println("Choose your opponent: Randy, Ray, Robbie");
+            Opponent=Puffer.nextLine();
+            if ("Randy".equals(Opponent)||"Ray".equals(Opponent)||"Robbie".equals(Opponent)) this.opponent = Opponent;
+            else Opponent = "Init";
+        }
     }
     
     
