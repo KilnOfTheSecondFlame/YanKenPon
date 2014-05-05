@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package yankenpon;
+package com.ppproductions.yankenpon.logic;
 
 import java.util.Scanner;
 
@@ -22,7 +22,8 @@ public class menu {
         // TODO code application logic here
         menu m = new menu();
         m.setOpponent();
-        System.out.print(m.getOpponent() + "\n");
+        game g = new game(m.getOpponent());
+        
     }
 
     public String getOpponent() {
