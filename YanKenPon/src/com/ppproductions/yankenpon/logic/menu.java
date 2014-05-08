@@ -34,8 +34,8 @@ public class menu {
     }
 
     public void setOpponent() {
-        String Opponent = "Init";
-        while ("Init".equals(Opponent)) {
+        opponent = "Init";
+        while ("Init".equals(opponent)) {
             System.out.println("Choose your opponent: ");
             opponent=Puffer.nextLine();
         }
