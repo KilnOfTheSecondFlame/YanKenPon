@@ -21,9 +21,12 @@ public class menu {
     public static void main(String[] args) {
         // TODO code application logic here
         menu m = new menu();
+        Boolean Win;
         m.setOpponent();
-        duel g = new duel(m.getOpponent());
-        
+        duel d = new duel(m.getOpponent());
+        Win = d.fight();
+        if (Win) System.out.println("You won!");
+        else System.out.println("Looooooooooooooser!!!!");
     }
 
     public String getOpponent() {
@@ -33,13 +36,8 @@ public class menu {
     public void setOpponent() {
         String Opponent = "Init";
         while ("Init".equals(Opponent)) {
-            System.out.println("Choose your opponent: Randy, Ray, Robbie");
+            System.out.println("Choose your opponent: ");
             Opponent=Puffer.nextLine();
-            if ("Randy".equals(Opponent)||"Ray".equals(Opponent)||"Robbie".equals(Opponent)) this.opponent = Opponent;
-            else {
-                Opponent = "Init";
-                System.out.println("Not an available opponent!");
-            }
         }
     }
     
