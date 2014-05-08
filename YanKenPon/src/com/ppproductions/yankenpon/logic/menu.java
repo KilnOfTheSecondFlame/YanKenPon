@@ -22,7 +22,7 @@ public class menu {
         // TODO code application logic here
         menu m = new menu();
         m.setOpponent();
-        game g = new game(m.getOpponent());
+        duel g = new duel(m.getOpponent());
         
     }
 

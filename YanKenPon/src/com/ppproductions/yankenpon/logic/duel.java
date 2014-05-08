@@ -15,10 +15,10 @@ package com.ppproductions.yankenpon.logic;
  *
  * @author pki
  */
-public class game {
+public class duel {
     private String opponent;
     
-    game (String opponent){
+    duel (String opponent){
         this.opponent=opponent;
     }
 }

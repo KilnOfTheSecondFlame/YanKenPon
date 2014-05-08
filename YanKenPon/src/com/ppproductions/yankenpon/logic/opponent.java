@@ -11,12 +11,28 @@ package com.ppproductions.yankenpon.logic;
  * @author pascalbaumann
  */
 public class opponent {
-    private Float pRock;
-    private Float pScissors;
+    private Double pRock;
+    private Double pScissors;
+    private String Name;
+    
+    public opponent(){
+        pRock=.3;
+        pScissors=.3;
+        Name="Default";
+    }
     
     public opponent(String Name){
         
-    } 
+    }
+
+    public String getName() {
+        return Name;
+    }
     
+    public String getPon(){
+        String pon;
+        
+        return pon;
+    }
     
 }
