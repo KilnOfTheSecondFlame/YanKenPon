@@ -34,7 +34,7 @@ public class duel {
     }
     
     public Boolean fight() {
-        opponent Opponent = new opponent();
+        opponent Opponent = new opponent(opponent);
         Boolean Win=true;
         String PlayerMove;
         String OpponentMove;
@@ -46,6 +46,7 @@ public class duel {
             System.out.println("Your Move: ");
             PlayerMove = Puffer.nextLine();
             Comparisation = compareMoves(PlayerMove, OpponentMove);
+            System.out.println("Your Opponent: " + OpponentMove);
             if (Comparisation == WIN_PLAYER) {
                 pWinCount++;
                 System.out.println("Your move was superior!");
