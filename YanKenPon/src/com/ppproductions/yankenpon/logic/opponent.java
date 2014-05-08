@@ -20,8 +20,8 @@ public class opponent {
     
     
     public opponent(){
-        pRock=Double.valueOf(1/3);
-        pScissors=Double.valueOf(1/3);
+        pRock=0.333333333333333333;
+        pScissors=0.333333333333333333;
         Name="Default";
     }
     
@@ -29,24 +29,24 @@ public class opponent {
         this.Name=Name;
         switch (Name) {
             case "Rocky":
-                pRock=1.0;
+                pRock=0.99;
                 pScissors=0.0;
                 break;
             case "Dwayne 'The Rock' Johnson":
                 pRock=0.8;
-                pScissors=1.0;
+                pScissors=0.1;
                 break;
             case "Edward":
                 pRock=0.0;
-                pScissors=1.0;
+                pScissors=0.99;
                 break;
             case "Paperboy":
                 pRock=0.0;
                 pScissors=0.0;
                 break;
             default:
-                pRock=Double.valueOf(1/3);
-                pScissors=Double.valueOf(1/3);
+                pRock=0.333333333333333333;
+                pScissors=0.333333333333333333;
                 break;
         }
     }
