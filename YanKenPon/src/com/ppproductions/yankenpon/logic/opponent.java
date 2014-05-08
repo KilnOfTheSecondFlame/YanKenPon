@@ -27,6 +27,8 @@ public class opponent {
     
     public opponent(String Name){
         this.Name=Name;
+        
+        //Set the probabilities according to the names
         switch (Name) {
             case "Rocky":
                 pRock=0.99;
