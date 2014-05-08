@@ -26,8 +26,8 @@ public class duel {
     final Integer TIE = 2;
     
     private String opponent;
-    private Integer oWinCount;
-    private Integer pWinCount;
+    private Integer oWinCount=0;
+    private Integer pWinCount=0;
     
     duel (String opponent){
         this.opponent=opponent;
@@ -43,12 +43,18 @@ public class duel {
         do {
             //get Opponent & Player choices:
             OpponentMove = Opponent.getPon();
-            do {
-                PlayerMove = Puffer.nextLine();
-            } while (!"Rock".equals(PlayerMove) || !"Paper".equals(PlayerMove) || !"Scissors".equals(PlayerMove));
+            System.out.println("Your Move: ");
+            PlayerMove = Puffer.nextLine();
             Comparisation = compareMoves(PlayerMove, OpponentMove);
-            if (Comparisation == WIN_PLAYER) pWinCount++;
-            else if (Comparisation == WIN_OPPONENT) oWinCount++;
+            if (Comparisation == WIN_PLAYER) {
+                pWinCount++;
+                System.out.println("Your move was superior!");
+            }
+            else if (Comparisation == WIN_OPPONENT) {
+                oWinCount++;
+                System.out.println("Your move was inferior!");
+            } 
+            else System.out.println("Tie!!!");
         } while (oWinCount < NUMBER_OF_WINS && pWinCount < NUMBER_OF_WINS);
         
         if (pWinCount < oWinCount) Win = false;
