@@ -25,8 +25,8 @@ public class menu {
         m.setOpponent();
         duel d = new duel(m.getOpponent());
         Win = d.fight();
-        if (Win) System.out.println("You won!");
-        else System.out.println("Looooooooooooooser!!!!");
+        if (Win) System.out.println("You win!");
+        else System.out.println("You lose!!!");
     }
 
     public String getOpponent() {
