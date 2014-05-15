@@ -26,41 +26,46 @@ public class duel {
     final Integer TIE = 2;
     
     private String opponent;
+    private String opponentMove;
     private Integer oWinCount=0;
     private Integer pWinCount=0;
     
-    duel (String opponent){
+    public duel (String opponent){
         this.opponent=opponent;
     }
     
-    public Boolean fight() {
-        opponent Opponent = new opponent(opponent);
-        Boolean Win=true;
-        String PlayerMove;
-        String OpponentMove;
+    public void fight(String PlayerMove, javax.swing.JTextArea textArea, opponent Opponent) {
         Integer Comparisation;
         
-        do {
-            //get Opponent & Player choices:
-            OpponentMove = Opponent.getPon();
-            System.out.println("Your Move: ");
-            PlayerMove = Puffer.nextLine();
-            Comparisation = compareMoves(PlayerMove, OpponentMove);
-            System.out.println("Your Opponent: " + OpponentMove);
-            if (Comparisation == WIN_PLAYER) {
-                pWinCount++;
-                System.out.println("Your move was superior!");
-            }
-            else if (Comparisation == WIN_OPPONENT) {
-                oWinCount++;
-                System.out.println("Your move was inferior!");
-            } 
-            else System.out.println("Tie!!!");
-        } while (oWinCount < NUMBER_OF_WINS && pWinCount < NUMBER_OF_WINS);
+        //get Opponent & Player choices:
+        opponentMove = Opponent.getPon();
+        Comparisation = compareMoves(PlayerMove, opponentMove);
+        if (Comparisation == WIN_PLAYER) {
+            pWinCount++;
+            textArea.append("Your move was superior!\n");
+        }
+        else if (Comparisation == WIN_OPPONENT) {
+            oWinCount++;
+            textArea.append("Your move was inferior!\n");
+        } 
+        else textArea.append("Tie!!!\n");
         
-        if (pWinCount < oWinCount) Win = false;
-        return Win;
       }
+    
+    public String getScore(){
+        return (oWinCount + " : " + pWinCount);
+    }
+    
+    public String getOpponentMove(){
+        return opponentMove;
+    }
+    
+    public int getWinState(){
+        int WinState = 0;
+        if (pWinCount>=NUMBER_OF_WINS) WinState=1;
+        else if (oWinCount>=NUMBER_OF_WINS) WinState=-1;
+        return WinState;
+    }
     
     private Integer compareMoves(String PlayerMove, String OpponentMove) {
         Integer result = null;
