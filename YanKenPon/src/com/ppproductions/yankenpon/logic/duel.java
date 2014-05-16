@@ -29,10 +29,24 @@ public class duel {
     private String opponentMove;
     private Integer oWinCount=0;
     private Integer pWinCount=0;
-    
-    public duel (String opponent){
-        this.opponent=opponent;
+
+    public Integer getoWinCount() {
+        return oWinCount;
     }
+
+    public void setoWinCount(Integer oWinCount) {
+        this.oWinCount = oWinCount;
+    }
+
+    public Integer getpWinCount() {
+        return pWinCount;
+    }
+
+    public void setpWinCount(Integer pWinCount) {
+        this.pWinCount = pWinCount;
+    }
+    
+
     
     public void fight(String PlayerMove, javax.swing.JTextArea textArea, opponent Opponent) {
         Integer Comparisation;

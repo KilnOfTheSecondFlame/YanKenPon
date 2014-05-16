@@ -60,7 +60,6 @@ public class opponent {
     public String getPon(){
         String pon;
         Double decidedMove=randomGenerator.nextDouble();
-        System.out.println(decidedMove);
         if (decidedMove<=pRock) pon="Rock";
         else if (decidedMove<=(pRock+pScissors)) pon="Scissors";
         else pon="Paper";

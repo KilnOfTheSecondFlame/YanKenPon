@@ -38,7 +38,8 @@ public class mainFrame extends javax.swing.JFrame {
         this.d = new duel();
         this.o = new opponent(oName);
         initComponents();
-        vsLabel.setText(pName + " VS " + oName);
+        oNameLabel.setText(oName);
+        pNameLabel.setText(pName);
         this.oName = oName;
         this.pName = pName;
     }
@@ -60,6 +61,8 @@ public class mainFrame extends javax.swing.JFrame {
         scorePanel = new javax.swing.JPanel();
         vsLabel = new javax.swing.JLabel();
         scoreLabel = new javax.swing.JLabel();
+        oNameLabel = new javax.swing.JLabel();
+        pNameLabel = new javax.swing.JLabel();
         combatPanel = new javax.swing.JPanel();
         oMovePanel = new javax.swing.JPanel();
         oMoveField = new javax.swing.JTextField();
@@ -111,8 +114,15 @@ public class mainFrame extends javax.swing.JFrame {
         vsLabel.setText("VS");
         vsLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
+        scoreLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         scoreLabel.setText("0 : 0");
+        scoreLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        oNameLabel.setText("This Guy");
+
+        pNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        pNameLabel.setText("You");
 
         javax.swing.GroupLayout scorePanelLayout = new javax.swing.GroupLayout(scorePanel);
         scorePanel.setLayout(scorePanelLayout);
@@ -120,13 +130,24 @@ public class mainFrame extends javax.swing.JFrame {
             scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(vsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(scoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(scorePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(oNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         scorePanelLayout.setVerticalGroup(
             scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(scorePanelLayout.createSequentialGroup()
-                .addComponent(vsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(scoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(oNameLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(vsLabel)
+                .addGap(8, 8, 8)
+                .addComponent(pNameLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         combatPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -206,7 +227,7 @@ public class mainFrame extends javax.swing.JFrame {
         );
         combatScreenPanelLayout.setVerticalGroup(
             combatScreenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout combatPanelLayout = new javax.swing.GroupLayout(combatPanel);
@@ -339,9 +360,11 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel oIconPanel;
     private javax.swing.JTextField oMoveField;
     private javax.swing.JPanel oMovePanel;
+    private javax.swing.JLabel oNameLabel;
     private javax.swing.JLabel pIconLabel;
     private javax.swing.JPanel pIconPanel;
     private javax.swing.JPanel pMovePanel;
+    private javax.swing.JLabel pNameLabel;
     private javax.swing.JButton rockButton;
     private javax.swing.JButton scissorsButton;
     private javax.swing.JLabel scoreLabel;
