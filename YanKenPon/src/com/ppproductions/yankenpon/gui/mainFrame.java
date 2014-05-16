@@ -28,10 +28,7 @@ public class mainFrame extends javax.swing.JFrame {
 
     
     public mainFrame() {
-        this.d = new duel();
-        this.o = new opponent();
-        this.pName = "You";
-        this.oName = "Default";
+        this("Default","You");
     }
     
     public mainFrame(String oName, String pName) {
@@ -300,7 +297,7 @@ public class mainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_combatActionPerformed
 
     public void update() {
-        scoreLabel.setText(d.getoWinCount() + " : " + d.getpWinCount());
+        scoreLabel.setText(d.getScore());
         if (d.getWinState() != 0) {
             rockButton.setEnabled(false);
             PaperButton.setEnabled(false);
